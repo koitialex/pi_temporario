@@ -1,0 +1,346 @@
+/* === RESET E GERAIS === */
+body {
+    background-color: rgb(63, 63, 63);
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+input,
+select {
+    box-sizing: border-box;
+}
+
+/* === CONTAINERS PRINCIPAIS === */
+.display {
+    margin: 0 auto;
+    width: 75%;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    height: 100%;
+}
+
+.image {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    border: 1 solid black;
+    background-color: antiquewhite;
+    aspect-ratio: 1;
+    margin-top: 2vh;
+}
+
+.bem-vindo {
+    width: 55%;
+}
+
+.bem-vindo h1 {
+    font-weight: bold;
+    font-size: 2em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 10px;
+    color: aliceblue;
+}
+
+.bem-vindo h2 {
+    margin: 0;
+    font-weight: 100;
+    font-size: 1.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: aliceblue;
+}
+.bem-vindo span{
+    color: yellow;
+}
+/* === header === */
+header{
+    margin: 0 auto;
+    width: 75%;
+    height: 20%;
+}
+.header{
+    background-color: rgb(88, 88, 88);
+
+}
+.navegador{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.logo{
+    display: inline-block;
+    width: 40%;
+    margin: 0;
+    flex-shrink: 0;
+}
+.logo img{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+}
+.logo-img{
+    
+    width: auto;
+    height: 100px;
+}
+.nav-link{
+    position: relative;
+    right: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.nav-link a{
+    text-decoration: none;
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-right: 10px;
+
+}
+.nav-link a:hover{
+    border-bottom: 1px solid white;
+}
+
+.buttons-nav{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 15px;
+    margin-right: 0px;
+}
+/* === ÁREA DE LOGIN E REGISTRO === */
+.loginRegister {
+    flex: 0.9;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    height: 98vh;
+}
+
+.loginRegister,
+.login,
+.register {
+    width: 100%;
+}
+
+.login ,
+.register {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    transition: transform .4s, opacity .4s .1s;
+}
+.login label,
+.register label {
+    color: aliceblue;
+}
+
+.login p,
+.register p {
+    color: aliceblue;
+}
+
+.login h2,
+.register h2 {
+    color: aliceblue;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 1vh;
+}
+
+.login {
+    /* personalizado se necessário */
+}
+
+.register {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .login {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .register {
+    transform: translate(0);
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.login-grid {
+    padding: 12vh 5vh;
+}
+
+/* === FORMULÁRIOS === */
+.input {
+    display: flex;
+    flex-direction: column;
+}
+
+.input input {
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.login fieldset,
+.register fieldset {
+    border-radius: 20px;
+}
+
+.login p,
+.register p {
+    display: flex;
+    justify-content: center;
+}
+
+.senha-esquecerSenha {
+    display: flex;
+    justify-content: space-between;
+}
+
+.senha-esquecerSenha a {
+    text-decoration: none;
+    color: aliceblue;
+}
+
+/* === BOTÕES === */
+#button {
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+}
+
+.button-register {
+    width: 100%;
+}
+
+.troca {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin: 15px 0 20px 0;
+}
+
+.troca button {
+    width: 50%;
+}
+
+/* === SOCIAL MEDIA / EXTRAS === */
+.social_media {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* === FOOTER === */
+footer {
+    background-color: rgb(88, 88, 88);
+    color: white;
+    margin-top: 3vh;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.rights {
+    border-bottom: 0.1px solid rgb(0, 0, 0);
+}
+
+.footer-margem {
+    margin: 0 auto;
+    width: 75%;
+}
+
+#footer-conteiner {
+    padding: 6vh 0 12vh 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-bottom: 6vh;
+}
+
+#footer-conteiner > div {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#footer-conteiner h3 {
+    margin-bottom: 12px;
+}
+
+#footer-conteiner a {
+    color: white;
+    text-decoration: none;
+}
+
+#footer-conteiner ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-conteiner li {
+    margin-bottom: 8px;
+}
+/*rec-senha*/
+
+.grid {
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
+  margin-top: 20px;
+}
+
+.rec-forms {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.rec-grid {
+  flex: 1; /* ← isso resolve! */
+  width: 100%;
+}
+
+.input-rec input {
+  width: 100%;
+  height: 4vh;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.rec-forms input,
+.rec-forms label,
+.rec-forms h2{
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#button-rec,
+#button-reset-rec{
+    color: black;
+
+}
