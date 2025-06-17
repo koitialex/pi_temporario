@@ -5,7 +5,8 @@ body {
     padding: 0;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -57,65 +58,76 @@ select {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: aliceblue;
 }
-.bem-vindo span{
+
+.bem-vindo span {
     color: yellow;
 }
+
 /* === header === */
-header{
+header {
     margin: 0 auto;
     width: 75%;
     height: 20%;
 }
-.header{
+
+.header {
     background-color: rgb(88, 88, 88);
 
 }
-.navegador{
+
+.navegador {
     display: flex;
     flex-direction: row;
     width: 100%;
+    align-items: center;
 }
-.logo{
+
+.logo {
     display: inline-block;
     width: 40%;
     margin: 0;
     flex-shrink: 0;
 }
-.logo img{
+
+.logo img {
     margin: 0;
     padding: 0;
     cursor: pointer;
 }
-.logo-img{
-    
+
+.logo-img {
+
     width: auto;
     height: 100px;
 }
-.nav-link{
+
+.nav-link {
     position: relative;
     right: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.nav-link a{
+
+.nav-link a {
     text-decoration: none;
     color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: 10px;
 
 }
-.nav-link a:hover{
+
+.nav-link a:hover {
     border-bottom: 1px solid white;
 }
 
-.buttons-nav{
+.buttons-nav {
     display: flex;
     align-items: center;
-    justify-content: end;
     gap: 15px;
-    margin-right: 0px;
+    margin-left: auto;
 }
+
 /* === ÁREA DE LOGIN E REGISTRO === */
 .loginRegister {
     flex: 0.9;
@@ -132,7 +144,7 @@ header{
     width: 100%;
 }
 
-.login ,
+.login,
 .register {
     position: absolute;
     right: 0;
@@ -141,6 +153,7 @@ header{
     width: 100%;
     transition: transform .4s, opacity .4s .1s;
 }
+
 .login label,
 .register label {
     color: aliceblue;
@@ -154,7 +167,7 @@ header{
 .login h2,
 .register h2 {
     color: aliceblue;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-top: 1vh;
 }
 
@@ -166,6 +179,9 @@ header{
     transform: translateX(15rem);
     opacity: 0;
     pointer-events: none;
+}
+.register h2{
+    text-align: center;
 }
 
 .active .login {
@@ -207,6 +223,9 @@ header{
     display: flex;
     justify-content: center;
 }
+.login-grid h2{
+    text-align: center;
+}
 
 .senha-esquecerSenha {
     display: flex;
@@ -217,12 +236,15 @@ header{
     text-decoration: none;
     color: aliceblue;
 }
+.senha-esquecerSenha a:hover{
+    border-bottom: 1px solid white;
+}
 
 /* === BOTÕES === */
 #button {
     margin-top: 10px;
     border-radius: 5px;
-    background-color: blue;
+    background-color: #0047b2;
     color: white;
     cursor: pointer;
 }
@@ -240,6 +262,10 @@ header{
 
 .troca button {
     width: 50%;
+}
+
+.buttons-nav input{
+    width: 20%;
 }
 
 /* === SOCIAL MEDIA / EXTRAS === */
@@ -279,7 +305,7 @@ footer p {
     padding-bottom: 6vh;
 }
 
-#footer-conteiner > div {
+#footer-conteiner>div {
     flex: 1;
     min-width: 200px;
     display: flex;
@@ -305,42 +331,103 @@ footer p {
 #footer-conteiner li {
     margin-bottom: 8px;
 }
+
 /*rec-senha*/
 
 .grid {
-  margin: 0 auto;
-  width: 50%;
-  height: 100%;
-  margin-top: 20px;
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    margin-top: 20px;
 }
 
 .rec-forms {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .rec-grid {
-  flex: 1; /* ← isso resolve! */
-  width: 100%;
+    flex: 1;
+    width: 100%;
+    border-radius: 20px;
+}
+.rec-grid h2{
+    text-align: center;
 }
 
 .input-rec input {
-  width: 100%;
-  height: 4vh;
-  margin-bottom: 10px;
-  border-radius: 8px;
+    width: 100%;
+    height: 4vh;
+    margin-bottom: 10px;
+    border-radius: 8px;
 }
-.rec-forms input,
+
+
 .rec-forms label,
-.rec-forms h2{
+.rec-forms h2 {
     color: aliceblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+
 #button-rec,
-#button-reset-rec{
-    color: black;
+#button-reset-rec {
+    color: white;
+    background-color: #0047b2;
 
 }
+
+#btn-Nova{
+    background-color: #0047b2;
+}
+#btn-reset-Nova{
+    background-color: #0047b2;
+}
+
+/*rec-senha*/
+.novaSenha {
+    margin: 0 auto;
+    width: 25%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.nova-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.nova-fieldset {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.nova-form input {
+    width: 100%;
+    height: 3vh;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.novaSenha label,
+.novaSenha h2{
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.novaSenha h2{
+    text-align: center;
+}
+
+.nova-titulo{
+    
+}
+

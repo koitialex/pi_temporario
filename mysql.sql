@@ -29,7 +29,9 @@ categoria varchar(50) not null,
 valor double(5,2) not null,
 descrição varchar (200)
  
-)
+);
+
+create table 
  
  
  

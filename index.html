@@ -14,24 +14,22 @@
         <header>
             <nav class="navegador">
                 <div class="logo">
-                    <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png" alt="" class="logo-img">
+                    <a href="/index.html">
+                        <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png" alt=""  class="logo-img" >
+                    </a>
                 </div>
                 <div class="nav-link">
                     <ul >
                         <a href="#">Home</a>
                         <a href="#">Produtos</a>
-                        <a href="#">Clubes Brasileiros</a>
-                        <a href="#">Seleções</a>
-                        <a href="#">Clubes Internacionais</a>
-                        <a href="#">Camisas Retrô</a>
                     </ul>
                 </div>
                 <div class="buttons-nav">
+                    <!-- <input type="text" placeholder="pesquisar"> -->
                     <a href="#"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
                     <a href="#"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
                     <a href="#"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i></a>
                 </div>
-                
             </nav>
         </header>
     </div>
@@ -81,39 +79,41 @@
                             </div>
                             <div class="input">
                                 <div>
+                                    <label>Nome</label>
+                                    <input type="text" name="email" placeholder="seu email" required id="user">
                                     <label>Email</label>
-                                    <input type="email" name="email" placeholder="seu email" required>
+                                    <input type="email" name="email" placeholder="seu email" required id="email">
                                 </div>
                                 <div>
                                         <label>Senha</label>
-                                    <input type="password" name="senha" placeholder="sua senha" required>
+                                    <input type="password" name="senha" placeholder="sua senha" required id="password">
                                     <label>Confirmar Senha</label>
-                                    <input type="password" name="confirmarSenha" placeholder="confirme a sua senha" required>
+                                    <input type="password" name="confirmarSenha" placeholder="confirme a sua senha" required id="confirm">
 
                                     <p>
                                         Perguntas para recuperação de senha
                                     </p>
                                     <label>Primeira pergunta</label>
                                     <input list="lista-perguntas" name="pergunta1" id="pergunta1 " required>
-                                        placeholder="Escolha a pergunta 1">
+                                
                                     <datalist id="lista-perguntas">
                                         <option value="Qual o nome da sua mãe?">
                                         <option value="Qual seu animal de estimação favorito?">
                                         <option value="Em que cidade você nasceu?">
                                     </datalist><br>
-                                    <input type="text" name="primeiraPergunta" placeholder="Primeira pergunta" required>
+                                    <input type="text" name="primeiraPergunta" placeholder="Primeira pergunta" required id="resposta1">
                                     <label>Segunda pergunta</label>
                                     <input list="lista-perguntas" name="pergunta2" id="pergunta2 " required
                                         placeholder="Escolha a pergunta 1">
-                                    <datalist id="lista-perguntas">
+                                    <datalist id="lista-perguntas" id="pergunta1">
                                         <option value="Qual o nome da sua mãe?">
                                         <option value="Qual seu animal de estimação favorito?">
                                         <option value="Em que cidade você nasceu?">
                                     </datalist><br>
-                                    <input type="text" name="segundaPergunta" placeholder=" segunda pergunta" required>
+                                    <input type="text" name="segundaPergunta" placeholder=" segunda pergunta" required id="resposta2">
 
                                     <input type="submit" value="Cadastrar" id="button">
-                                    <input type="reset" value="Apagar" id="button">
+                                    <input type="reset" value="Apagar" id="button-reset">
                                 </div>
                             </div>
                             <p>
