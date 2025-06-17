@@ -212,6 +212,9 @@ header {
     margin-bottom: 10px;
     border-radius: 8px;
 }
+.input select {
+    width: 100%;
+}
 
 .login fieldset,
 .register fieldset {
