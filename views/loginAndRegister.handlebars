@@ -1,39 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>manto de campeões</title>
-    <link rel="stylesheet" href="public/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-</head>
-
-<body>
-    <div class="header">
-        <header>
-            <nav class="navegador">
-                <div class="logo">
-                    <a href="/index.html">
-                        <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png"
-                            alt="" class="logo-img">
-                    </a>
-                </div>
-                <div class="nav-link">
-                    <ul>
-                        <a href="#">Home</a>
-                        <a href="#">Produtos</a>
-                    </ul>
-                </div>
-                <div class="buttons-nav">
-                    <!-- <input type="text" placeholder="pesquisar"> -->
-                    <a href="#"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-solid fa-cart-shopping" id="btn-carrinho" style="color: #ffffff;"></i></a>
-                </div>
-            </nav>
-        </header>
-    </div>
     <section class="display">
         <div class="main">
             <div class="bem-vindo">
@@ -44,7 +9,7 @@
                     Faça login ou crie uma conta para acessar ofertas exclusivas e acompanhar seus pedidos.
                 </h2>
                 <div class="image">
-                    <img src="" alt="">
+                    <img src="/img/pexels-bohlemedia-1884574.jpg" alt="">
                 </div>
             </div>
             <div class="loginRegister" id="loginRegister">
@@ -63,17 +28,17 @@
                                 <div class="senha-esquecerSenha">
                                     <label>Senha</label>
                                     <span class="erro" id=""></span>
-                                    <a href="recuperacaoSenha.html">Esqueceu sua senha?</a>
+                                    <a href="/loginAndRegister/recuperacaoSenha">Esqueceu sua senha?</a>
                                 </div>
                                 <input type="password" name="senha" placeholder="sua senha">
-                                <input type="submit" value="logar" id="button-login">
-                                <input type="reset" value="Apagar" id="button-reset-login">
+                                <input type="submit" value="logar" id="button-login" class="button">
+                                <input type="reset" value="Apagar" id="button-reset-login" class="button">
                             </div>
                         </fieldset>
                     </form>
                 </div>
                 <div class="register">
-                    <form action="" class="register-form">
+                    <form action="/loginAndRegister/insert" method="post" class="register-form">
                         <fieldset>
                             <h2>Cadastro</h2>
                             <div class="troca">
@@ -85,7 +50,7 @@
                                     <div>
                                         <label id="nomeLabel" for="nome">Nome</label>
                                         <span class="erro" id="ErroNome"></span>
-                                        <input type="text" name="email" placeholder="seu nome" id="nome">
+                                        <input type="text" name="nome" placeholder="seu nome" id="nome">
                                     </div>
                                     <div>
                                         <label for="email" id="emailLabel">Email</label>
@@ -110,38 +75,38 @@
                                         Perguntas para recuperação de senha
                                     </p>
                                     <div>
-                                        <label for="pergunta1">Primeira pergunta</label>
+                                        <label for="pergunta1" id="pergunta1Label" >Primeira pergunta</label>
                                         <span class="erro" id="ErroPergunta1"></span>
-                                        <select id="pergunta1">
+                                        <select id="pergunta1" name="pergunta1">
                                             <option value="">-- Escolha uma pergunta --</option>
                                             <option value="mae">Qual o nome da sua mãe?</option>
                                             <option value="animal">Qual seu animal de estimação favorito?</option>
                                             <option value="cidade">Em que cidade você nasceu?</option>
                                         </select>
-                                        <input type="text" name="primeiraPergunta" placeholder="Primeira pergunta"
+                                        <input type="text" name="resposta1" placeholder="Primeira pergunta"
                                             id="resposta1">
                                     </div>
 
                                     <div>
-                                        <label for="pergunta2">Segunda pergunta</label>
+                                        <label for="pergunta2" id="pergunta2Label">Segunda pergunta</label>
                                         <span class="erro" id="ErroPergunta2"></span>
-                                        <select id="pergunta2">
+                                        <select id="pergunta2" name="pergunta2">
                                             <option value="">-- Escolha uma pergunta --</option>
                                             <option value="mae">Qual o nome da sua mãe?</option>
                                             <option value="animal">Qual seu animal de estimação favorito?</option>
                                             <option value="cidade">Em que cidade você nasceu?</option>
                                         </select>
-                                        <input type="text" name="segundaPergunta" placeholder="Segunda pergunta"
+                                        <input type="text" name="resposta2" placeholder="Segunda pergunta"
                                             id="resposta2">
                                     </div>
 
-                                    <input type="submit" value="Cadastrar" id="button">
-                                    <input type="reset" value="Apagar" id="button-reset">
+                                    <input type="submit" value="Cadastrar" id="button-sub" class="button">
+                                    <input type="reset" value="Apagar" id="button-reset" class="button">
                                 </div>
                             </div>
                             <p>
-                                Ao continuar, você concorda com nossa <span> Política de Privacidade </span> e <span>
-                                    Termo de Uso </span>
+                                Ao continuar, você concorda com nossa Política de Privacidade e 
+                                    Termo de Uso 
                             </p>
                         </fieldset>
 
@@ -151,44 +116,7 @@
             </div>
         </div>
     </section>
-    <footer>
-        <div class="rights">
-            <div class="footer-margem">
-                <div id="footer-conteiner">
-                    <div>
-                        <h3>Manto de Campeões</h3>
-                        <p>Sua loja especializada em camisas de futebol originais. Qualidade e autenticidade garantidas.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Categorias</h3>
-                        <a href="#">Clubes Brasileiros</a>
-                        <a href="#">Seleções</a>
-                        <a href="#">Clubes Internacionais</a>
-                        <a href="#">Camisas Retrô</a>
-                    </div>
-                    <div>
-                        <h3>Informações</h3>
-                        <a href="#">Sobre Nós</a>
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Termos de Uso</a>
-                    </div>
-                    <div>
-                        <h3>Contato</h3>
-                        <ul>
-                            <li>algum endereço</li>
-                            <li>São Paulo - SP</li>
-                            <li>contato@mantodecampeoes.com.br</li>
-                            <li>(11) 99999-9999</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <p>
-            © 2025 Manto de Campeões. Todos os direitos reservados.
-        </p>
-    </footer>
+
 
 </body>
 

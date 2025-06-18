@@ -73,9 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
       alert("Falha no cadastro. Corrija os erros.");
     } else {
       alert("Cadastrado com sucesso!");
-      form.submit(); // opcional: envia o form se quiser
-      document.querySelector('.btn-login').click();
-      
+      form.submit(); 
+      limparCamposFormularioCadastro();
+
     }
   });
 
@@ -217,6 +217,25 @@ function validarResposta2() {
   resposta.style.border = '';
   return true;
 }
+function limparCamposFormularioCadastro() {
+  const form = document.querySelector('.register-form');
+  form.reset(); // limpa todos os campos automaticamente
+
+  // Também limpa mensagens de erro (se quiser)
+  const erros = document.querySelectorAll('.erro');
+  erros.forEach((e) => {
+    e.textContent = '';
+  });
+
+  // Restaura estilos dos labels e inputs
+  const labels = form.querySelectorAll('label');
+  labels.forEach(label => label.style.color = '');
+
+  const inputs = form.querySelectorAll('input, select');
+  inputs.forEach(input => input.style.border = '');
+}
+
+/*botão click direcionando para uma nova página */
 
 function carregarPaginaCarrinho() {
   const carrinho = document.querySelector('.fa-solid.fa-cart-shopping');
@@ -233,6 +252,13 @@ function carregarPaginaCarrinho() {
 
 document.addEventListener('DOMContentLoaded', carregarPaginaCarrinho);
 
-  // segue se passar
+function carregarPaginaCarrinho() {
+  const novaSenhaPagina = document.getElementById('button-rec')
+  novaSenhaPagina.addEventListener('click', (e) =>{
+    e.preventDefault();
+    window.location.href = '/loginAndRegister/recuperacaoSenha/novaSenha'
+  })
+
+}
 
 

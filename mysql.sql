@@ -6,7 +6,10 @@ CREATE TABLE CLIENTE (
     nome VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL,
-    telefone VARCHAR(20),
+    pergunta1 varchar(100) not null,
+    pergunta2 varchar(100) not null,
+    resposta1 varchar(100) not null,
+    resposta2 varchar(100) not null,
     data_cadastro DATE
     
 );
