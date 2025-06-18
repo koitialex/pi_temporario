@@ -1,0 +1,29 @@
+{
+  "name": "pi_temporario",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js localhost 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koitialex/pi_temporario.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/koitialex/pi_temporario/issues"
+  },
+  "homepage": "https://github.com/koitialex/pi_temporario#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
