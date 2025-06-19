@@ -40,6 +40,20 @@ app.post('/loginAndRegister/insert', function(req, res){
     res.redirect('/')
   }) 
 })
+app.post('/loginAndRegister/home', function(req, res){
+  const senha = req.body.senha
+  const email = req.body.email
+  
+  const query = `insert into cliente(senha,email)
+  values ('${senha}','${email}')`
+  
+  connection.query(query, function(err){
+    if (err) {
+      console.log(err)
+    }
+    res.redirect('/')
+  }) 
+})
 
 app.get('/loginAndRegister/recuperacaoSenha', function (req, res) {
   res.render('recuperacaoSenha')
@@ -47,6 +61,26 @@ app.get('/loginAndRegister/recuperacaoSenha', function (req, res) {
 app.get('/loginAndRegister/recuperacaoSenha/novaSenha', function (req, res) {
   res.render('novaSenha')
 })
+app.get('/loginAndRegister/home', function (req, res) {
+  res.render('home')
+})
+/*login */
+app.post('/', (req, res) => {
+  const { email, senha } = req.body; // Recebendo dados do frontend
+  
+  connection.query('SELECT * FROM CLIENTE WHERE email = ?', [email], (err, results) => {
+    if (results.length === 0) {
+      return res.json({ sucesso: false, mensagem: 'Usuário não encontrado.' });
+    }
+
+    const usuario = results[0];
+    if (usuario.senha === senha) {
+      return res.json({ sucesso: true }); // Responde ao frontend com sucesso
+    } else {
+      return res.json({ sucesso: false, mensagem: 'Senha incorreta.' }); // Envia erro
+    }
+  });
+});
 
 /*conecção com o banco de dados */
 

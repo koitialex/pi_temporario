@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       !resposta1Valida ||
       !pergunta2Valida ||
       !resposta2Valida
-    ) {
+    ){
       alert("Falha no cadastro. Corrija os erros.");
     } else {
       alert("Cadastrado com sucesso!");
@@ -234,6 +234,49 @@ function limparCamposFormularioCadastro() {
   const inputs = form.querySelectorAll('input, select');
   inputs.forEach(input => input.style.border = '');
 }
+function limparCamposFormulariologin() {
+  const form = document.getElementById('login-forms-id');
+  form.reset(); // limpa todos os campos automaticamente
+
+  const inputs = form.querySelectorAll('input, select');
+  inputs.forEach(input => input.style.border = '');
+}
+
+/*login */
+
+const formLogin = document.getElementById('login-forms-id')
+
+formLogin.addEventListener('submit',() =>{
+  const email = document.getElementById('input-email-login-id')
+  const senha = document.getElementById('input-senha-login-id')
+
+  login(email,senha)
+  limparCamposFormulariologin()
+
+})
+
+function login(email, senha) {
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, senha })
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.sucesso) {
+      alert('Login feito com sucesso!');
+      window.location.href = '/paginaPrincipal';
+    } else {
+      alert('Erro: ' + data.mensagem);
+    }
+  })
+  .catch(error => {
+    console.error('Erro na requisição:', error);
+  });
+}
+
 
 /*botão click direcionando para uma nova página */
 

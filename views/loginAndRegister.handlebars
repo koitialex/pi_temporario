@@ -14,7 +14,7 @@
             </div>
             <div class="loginRegister" id="loginRegister">
                 <div class="login">
-                    <form action="" class="login-forms">
+                    <form action="/loginAndRegister/home" class="login-forms" id="login-forms-id">
                         <fieldset class="login-grid">
                             <h2>Login</h2>
                             <div class="troca">
@@ -24,13 +24,14 @@
                             <div class="input">
                                 <label>Email</label>
                                 <span class="erro" id=""></span>
-                                <input type="email" name="email" placeholder="seu email">
+                                <input type="email" name="email" placeholder="seu email" id="input-email-login-id">
                                 <div class="senha-esquecerSenha">
                                     <label>Senha</label>
                                     <span class="erro" id=""></span>
                                     <a href="/loginAndRegister/recuperacaoSenha">Esqueceu sua senha?</a>
                                 </div>
-                                <input type="password" name="senha" placeholder="sua senha">
+                                <input type="password" name="senha" placeholder="sua senha" id="input-senha-login-id">
+
                                 <input type="submit" value="logar" id="button-login" class="button">
                                 <input type="reset" value="Apagar" id="button-reset-login" class="button">
                             </div>

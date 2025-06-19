@@ -10,68 +10,29 @@
 </head>
 
 <body>
-    <div class="header">
-        <header>
-            <nav class="navegador">
-                <div class="logo">
-                    <a href="/index.html">
-                        <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png"
-                            alt="" class="logo-img">
-                    </a>
-                </div>
-                <div class="nav-link">
-                    <ul>
-                        <a href="#">Home</a>
-                        <a href="#">Produtos</a>
-                    </ul>
-                </div>
-                <div class="buttons-nav">
-                    <!-- <input type="text" placeholder="pesquisar"> -->
-                    <a href="#"><i class="fa-solid fa-magnifying-glass" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-solid fa-user" style="color: #ffffff;"></i></a>
-                    <a href="#"><i class="fa-solid fa-cart-shopping" id="btn-carrinho" style="color: #ffffff;"></i></a>
-                </div>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png"
+                    alt="" class="logo-img">
+            </a>
+            <nav class="main-nav">
+                <a href="index.html">Home</a>
+                <a href="produtos.html">Produtos</a>
             </nav>
-        </header>
-    </div>
-    {{{ body }}}
-    <footer>
-        <div class="rights">
-            <div class="footer-margem">
-                <div id="footer-conteiner">
-                    <div>
-                        <h3>Manto de Campeões</h3>
-                        <p>Sua loja especializada em camisas de futebol originais. Qualidade e autenticidade garantidas.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Categorias</h3>
-                        <a href="#">Clubes Brasileiros</a>
-                        <a href="#">Seleções</a>
-                        <a href="#">Clubes Internacionais</a>
-                        <a href="#">Camisas Retrô</a>
-                    </div>
-                    <div>
-                        <h3>Informações</h3>
-                        <a href="#">Sobre Nós</a>
-                        <a href="#">Política de Privacidade</a>
-                        <a href="#">Termos de Uso</a>
-                    </div>
-                    <div>
-                        <h3>Contato</h3>
-                        <ul>
-                            <li>algum endereço</li>
-                            <li>São Paulo - SP</li>
-                            <li>contato@mantodecampeoes.com.br</li>
-                            <li>(11) 99999-9999</li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="header-actions">
+                <a href="#" aria-label="Favoritos"><i class="fas fa-heart"></i></a>
+                <a href="#" aria-label="Conta"><i class="fas fa-user"></i></a>
+                <a href="#" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
-        <p>
-            © 2025 Manto de Campeões. Todos os direitos reservados.
-        </p>
+    </header>
+    </>
+    {{{ body }}}
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2024 Manto de Campeões. Todos os direitos reservados.</p>
+        </div>
     </footer>
 </body>
 <script src="/js/script.js"></script>
