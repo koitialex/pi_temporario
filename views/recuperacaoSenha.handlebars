@@ -1,40 +1,37 @@
+<section class="grid">
+    <div class="rec-form" id="rec">
+        <form action="" class="rec-forms" id="rec-forms-id">
+            <fieldset class="rec-grid">
+                <h2>Recuperação de senha</h2>
 
-    <section class="grid">
-        <div class="rec-form" id="rec">
-            <form action="" class="rec-forms">
-                <fieldset class="rec-grid">
-                    <h2>Recuperação de senha</h2>
+                <div class="input-rec">
+                    <label>Email</label>
+                    <input type="email" name="emailRec" placeholder="seu email" id="email-rec">
 
-                    <div class="input-rec">
-                        <label>Email</label>
-                        <input type="email" name="email" placeholder="seu email">
+                    <label>Primeira pergunta</label>
+                    <select id="pergunta1-rec" name="pergunta1Rec" class="select-Escolha">
+                        <option value="">-- Escolha uma pergunta --</option>
+                        <option value="mae">Qual o nome da sua mãe?</option>
+                        <option value="animal">Qual seu animal de estimação favorito?</option>
+                        <option value="cidade">Em que cidade você nasceu?</option>
+                    </select>
+                    <input type="text" name="resposta1Rec" id="resposta1-rec" placeholder="Primeira pergunta">
 
-                        <label>Primeira pergunta</label>
-                        <input list="lista-perguntas" name="pergunta1" id="pergunta1 " placeholder="Escolha a primeira pergunta" >
+                    <label>Segunda pergunta</label>
+                    <select id="pergunta2-rec" name="pergunta2Rec" class="select-Escolha">
+                        <option value="">-- Escolha uma pergunta --</option>
+                        <option value="mae">Qual o nome da sua mãe?</option>
+                        <option value="animal">Qual seu animal de estimação favorito?</option>
+                        <option value="cidade">Em que cidade você nasceu?</option>
+                    </select>
+                    <input type="text" name="resposta2Rec" id="resposta2-rec" placeholder=" segunda pergunta">
 
-                        <datalist id="lista-perguntas">
-                            <option value="Qual o nome da sua mãe?">
-                            <option value="Qual seu animal de estimação favorito?">
-                            <option value="Em que cidade você nasceu?">
-                        </datalist><br>
-                        <input type="text" name="primeiraPergunta" placeholder="Primeira pergunta" >
-                        <label>Segunda pergunta</label>
-                        <input list="lista-perguntas" name="pergunta2" id="pergunta2 " 
-                            placeholder="Escolha a pergunta 1">
-                        <datalist id="lista-perguntas">
-                            <option value="Qual o nome da sua mãe?">
-                            <option value="Qual seu animal de estimação favorito?">
-                            <option value="Em que cidade você nasceu?">
-                        </datalist><br>
-                        <input type="text" name="segundaPergunta" placeholder=" segunda pergunta" >
+                    <input type="submit" value="Enviar" id="button-rec" class="button">
+                    <input type="reset" value="Apagar" id="button-reset-rec" class="button">
+                </div>
+            </fieldset>
+        </form>
 
-                        <input type="submit" value="Enviar" id="button-rec" class="button">
-                        <input type="reset" value="Apagar" id="button-reset-rec" class="button">
-                    </div>
-                </fieldset>
-            </form>
-
-        </div>
-        </div>
-    </section>
- 
+    </div>
+    </div>
+</section>

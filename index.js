@@ -1,3 +1,4 @@
+/*configuraçoes padrão do node.js */
 const express = require('express')
 const exphbs = require('express-handlebars')
 const mysql = require('mysql2')
@@ -16,11 +17,11 @@ app.use(
 app.use(express.json())
 
 app.use(express.static('public'))
-
+/*página inicial que será carregada quando for entrar no enderenço localhost:3000 */
 app.get('/', function (req, res) {
   res.render('loginAndRegister')
 })
-
+/*configurando os dados para serem requisitados e enviar para o banco de dados . também leva pro caminho seguinte após coletar estes dados*/
 app.post('/loginAndRegister/insert', function(req, res){
   const nome = req.body.nome
   const senha = req.body.senha
@@ -40,44 +41,108 @@ app.post('/loginAndRegister/insert', function(req, res){
     res.redirect('/')
   }) 
 })
-app.post('/loginAndRegister/home', function(req, res){
-  const senha = req.body.senha
-  const email = req.body.email
-  
-  const query = `insert into cliente(senha,email)
-  values ('${senha}','${email}')`
-  
-  connection.query(query, function(err){
-    if (err) {
-      console.log(err)
-    }
-    res.redirect('/')
-  }) 
-})
 
+/*caminho para a recuperação de senha*/
 app.get('/loginAndRegister/recuperacaoSenha', function (req, res) {
   res.render('recuperacaoSenha')
 })
+/*caminho para a nova senha*/
 app.get('/loginAndRegister/recuperacaoSenha/novaSenha', function (req, res) {
   res.render('novaSenha')
 })
 app.get('/loginAndRegister/home', function (req, res) {
   res.render('home')
 })
+
+/*cadastro*/
+
+app.post('/cadastroEmail', (req, res) => {
+  const { nome, email, senha } = req.body;
+
+  // Verificar se o e-mail já existe
+  const verificarEmail = 'SELECT * FROM CLIENTE WHERE email = ?';
+  connection.query(verificarEmail, [email], (err, resultados) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ sucesso: false, mensagem: 'Erro no servidor' });
+    }
+
+    if (resultados.length > 0) {
+      // Email já está cadastrado
+      return res.json({ sucesso: false, mensagem: 'E-mail já cadastrado' });
+    }
+
+    // Se não existir, inserir novo usuário
+    const inserir = 'INSERT INTO CLIENTE (nome, email, senha) VALUES (?, ?, ?)';
+    connection.query(inserir, [nome, email, senha], (err, resultado) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ sucesso: false, mensagem: 'Erro ao cadastrar' });
+      }
+
+      res.json({ sucesso: true, mensagem: 'Cadastro realizado com sucesso' });
+    });
+  });
+});
+
 /*login */
-app.post('/', (req, res) => {
-  const { email, senha } = req.body; // Recebendo dados do frontend
-  
+app.post('/login', (req, res) => {
+  const { email, senha } = req.body;
+
   connection.query('SELECT * FROM CLIENTE WHERE email = ?', [email], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.json({ sucesso: false, mensagem: 'Erro interno no servidor' });
+    }
+
     if (results.length === 0) {
       return res.json({ sucesso: false, mensagem: 'Usuário não encontrado.' });
     }
+   
 
     const usuario = results[0];
     if (usuario.senha === senha) {
-      return res.json({ sucesso: true }); // Responde ao frontend com sucesso
+      return res.json({ sucesso: true });
     } else {
-      return res.json({ sucesso: false, mensagem: 'Senha incorreta.' }); // Envia erro
+      return res.json({ sucesso: false, mensagem: 'Senha incorreta.' });
+    }
+  });
+});
+//recuperação de senha
+app.post('/verificar-recuperacao', (req, res) => {
+  const {emailRec, pergunta1Rec, pergunta2Rec, resposta1Rec, resposta2Rec  } = req.body;
+
+  connection.query('SELECT * FROM CLIENTE WHERE email = ? AND pergunta1 = ? AND pergunta2 = ? AND resposta1 = ? AND resposta2 = ? ', 
+    [emailRec,pergunta1Rec,pergunta2Rec,resposta1Rec,resposta2Rec], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.json({ sucesso: false, mensagem: 'Erro interno no servidor' });
+      
+    }
+
+    if (results.length > 0) {
+      res.json({ valido: true });
+    } else {
+      res.json({ valido: false });
+    }
+  });
+});
+
+//mudar para nova senha
+app.post('/novaSenha', (req, res) => {
+  const { novaSenha, emailDeRec } = req.body;
+
+  connection.query('update CLIENTE SET senha = ? WHERE email = ? ', 
+    [novaSenha, emailDeRec ], (err, results) => {
+    if (err) {
+      console.error(err);
+      return res.json({ sucesso: false, mensagem: 'Erro interno no servidor' });
+    }
+
+    if (results.affectedRows > 0) {
+      res.json({ sucesso: true, mensagem: 'Senha atualizada com sucesso' });
+    } else {
+      res.json({ sucesso: false, mensagem: 'Nenhum usuário encontrado com esse email' });
     }
   });
 });

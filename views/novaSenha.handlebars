@@ -1,16 +1,16 @@
 
     <section class="novaSenha">
-        <form action="" class="nova-form">
+        <form action="" class="nova-form" id="nova-form-id">
             <fieldset class="nova-fieldset">
                 <div class="nova-titulo">
                     <h2>Criar a nova senha</h2>
                 </div>
                 <label for="">Nova Senha</label>
-                <input type="password" placeholder="Digite a nova senha">
+                <input type="password" placeholder="Digite a nova senha" name="nomaSenha" id="mudarNomaSenha" required>
                 <label for="">Confirme a nova senha</label>
-                <input type="password" placeholder="Digite para confirmar a nova senha">
+                <input type="password" placeholder="Digite para confirmar a nova senha" name="ConfirmarNomaSenha" id="mudarConfirmarNomaSenha" required>
 
-                <input type="button" value="Enviar" id="btn-Nova" class="button">
+                <input type="submit" value="Enviar" id="btn-Nova" class="button">
                 <input type="reset" value="Apagar" id="btn-reset-Nova" class="button">
             </fieldset>
         </form>

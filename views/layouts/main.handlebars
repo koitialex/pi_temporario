@@ -1,40 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manto de Campeões</title>
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png"
-                    alt="" class="logo-img">
-            </a>
-            <nav class="main-nav">
-                <a href="index.html">Home</a>
-                <a href="produtos.html">Produtos</a>
-            </nav>
-            <div class="header-actions">
-                <a href="#" aria-label="Favoritos"><i class="fas fa-heart"></i></a>
-                <a href="#" aria-label="Conta"><i class="fas fa-user"></i></a>
-                <a href="#" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i></a>
+    <div class="layout-container">
+        <header class="site-header">
+            <div class="container">
+                <a href="/" class="logo">
+                    <img src="/img/a-logo-with-the-text-manto-de-campeoes-there-is-a--SKFvQwCWQpu2tFKa5eJKFw-OWun59IXSXusnQgP6vaByw.png"
+                        alt="logo" class="logo-img" />
+                </a>
+                <nav class="main-nav">
+                    <a href="/">Home</a>
+                    <a href="/produtos">Produtos</a>
+                </nav>
+                <div class="header-actions">
+                    <div class="search-box">
+                        <input type="text" id="searching" placeholder="pesquisar">
+                        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+
+                    </div>
+                    <a href="#"><i class="fas fa-heart"></i></a>
+                    <a href="#"><i class="fas fa-user"></i></a>
+                    <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                </div>
             </div>
-        </div>
-    </header>
-    </>
-    {{{ body }}}
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; 2024 Manto de Campeões. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+        </header>
+
+        <main class="main-content">
+            {{{ body }}}
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <p>&copy; 2024 Manto de Campeões. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="/js/script.js"></script>
 </body>
-<script src="/js/script.js"></script>
 
 </html>

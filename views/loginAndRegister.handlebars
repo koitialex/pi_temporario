@@ -18,8 +18,7 @@
                         <fieldset class="login-grid">
                             <h2>Login</h2>
                             <div class="troca">
-                                <button>Login</button>
-                                <button type="button" class="btn-register">Registrar</button>
+                                <button type="button" class="btn-register" id="btn-register-id">Registrar</button>
                             </div>
                             <div class="input">
                                 <label>Email</label>
@@ -32,7 +31,7 @@
                                 </div>
                                 <input type="password" name="senha" placeholder="sua senha" id="input-senha-login-id">
 
-                                <input type="submit" value="logar" id="button-login" class="button">
+                                <input type="submit" value="Logar" id="button-login" class="button">
                                 <input type="reset" value="Apagar" id="button-reset-login" class="button">
                             </div>
                         </fieldset>
@@ -43,33 +42,32 @@
                         <fieldset>
                             <h2>Cadastro</h2>
                             <div class="troca">
-                                <button type="button" class="btn-login">Login</button>
-                                <button>Register</button>
+                                <button type="button" class="btn-login" id="btn-login-id">Login</button>
                             </div>
                             <div class="input">
                                 <div>
                                     <div>
                                         <label id="nomeLabel" for="nome">Nome</label>
                                         <span class="erro" id="ErroNome"></span>
-                                        <input type="text" name="nome" placeholder="seu nome" id="nome">
+                                        <input type="text" name="nome" placeholder="seu nome" id="nome" required >
                                     </div>
                                     <div>
                                         <label for="email" id="emailLabel">Email</label>
                                         <span class="erro" id="ErroEmail"></span>
-                                        <input type="email" name="email" placeholder="seu email" id="email">
+                                        <input type="email" name="email" placeholder="seu email" id="email" required>
                                     </div>
                                 </div>
                                 <div>
                                     <div>
                                         <label id="senhaLabel" for="senha">Senha</label>
                                         <span class="erro" id="ErroSenha"></span>
-                                        <input type="password" name="senha" placeholder="sua senha" id="password">
+                                        <input type="password" name="senha" placeholder="sua senha" id="password" required>
                                     </div>
                                     <div>
                                         <label id="confirmarSenhaLabel">Confirmar Senha</label>
                                         <span class="erro" id="ErroConfirmarSenha"></span>
-                                        <input type="password" name="confirmarSenha" placeholder="confirme a sua senha"
-                                            id="confirmarSenha">
+                                        <input type="password" name="confirmarSenha" placeholder="confirme a sua senha "
+                                            id="confirmarSenha" required >
                                     </div>
 
                                     <p>
@@ -77,28 +75,28 @@
                                     </p>
                                     <div>
                                         <label for="pergunta1" id="pergunta1Label" >Primeira pergunta</label>
-                                        <span class="erro" id="ErroPergunta1"></span>
-                                        <select id="pergunta1" name="pergunta1">
+                                        <span class="erro" id="ErroPergunta1" ></span>
+                                        <select id="pergunta1" name="pergunta1" class="select-Escolha" required >
                                             <option value="">-- Escolha uma pergunta --</option>
                                             <option value="mae">Qual o nome da sua mãe?</option>
                                             <option value="animal">Qual seu animal de estimação favorito?</option>
                                             <option value="cidade">Em que cidade você nasceu?</option>
                                         </select>
                                         <input type="text" name="resposta1" placeholder="Primeira pergunta"
-                                            id="resposta1">
+                                            id="resposta1" required >
                                     </div>
 
                                     <div>
                                         <label for="pergunta2" id="pergunta2Label">Segunda pergunta</label>
-                                        <span class="erro" id="ErroPergunta2"></span>
-                                        <select id="pergunta2" name="pergunta2">
+                                        <span class="erro" id="ErroPergunta2" ></span>
+                                        <select id="pergunta2" name="pergunta2" class="select-Escolha" required >
                                             <option value="">-- Escolha uma pergunta --</option>
                                             <option value="mae">Qual o nome da sua mãe?</option>
                                             <option value="animal">Qual seu animal de estimação favorito?</option>
                                             <option value="cidade">Em que cidade você nasceu?</option>
                                         </select>
                                         <input type="text" name="resposta2" placeholder="Segunda pergunta"
-                                            id="resposta2">
+                                            id="resposta2" required >
                                     </div>
 
                                     <input type="submit" value="Cadastrar" id="button-sub" class="button">
@@ -119,7 +117,7 @@
     </section>
 
 
+<script src="/js/script.js"></script>
 </body>
 
 </html>
-<script src="/js/script.js"></script>

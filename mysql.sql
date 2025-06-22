@@ -13,7 +13,7 @@ CREATE TABLE CLIENTE (
     data_cadastro DATE
     
 );
-
+/*
 CREATE TABLE PEDIDO (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT,
@@ -23,11 +23,7 @@ CREATE TABLE PEDIDO (
     FOREIGN KEY (id_cliente) REFERENCES CLIENTE(ID)
 );
 
-CREATE TABLE CATEGORIA (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100),
-    descricao TEXT
-);
+*/
 
 CREATE TABLE PRODUTO (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -35,7 +31,7 @@ CREATE TABLE PRODUTO (
     descricao TEXT,
     valor DECIMAL(10,2),
     estoque INT,
-    cor VARCHAR(50),
+    imagem varchar(url)
     categoria_id INT,
     FOREIGN KEY (categoria_id) REFERENCES CATEGORIA(id)
 );
@@ -53,6 +49,7 @@ CREATE TABLE CARRINHO (
     id INT AUTO_INCREMENT PRIMARY KEY,
     id_cliente INT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em datetime
     FOREIGN KEY (id_cliente) REFERENCES CLIENTE(ID)
 );
 
@@ -61,22 +58,12 @@ CREATE TABLE ITENSCARRINHO (
     id_carrinho INT NOT NULL,
     id_produto INT NOT NULL,
     quantidade INT NOT NULL DEFAULT 1,
+    subtotal DECIMAL(10,2)
     FOREIGN KEY (id_carrinho) REFERENCES CARRINHO(id),
     FOREIGN KEY (id_produto) REFERENCES PRODUTO(id)
 );
 
 
-
-
-
-
-
-
 select * from pagamento;
-
-update pagamento 
-set valor = 200.05
-where id_pagamento = 1;
-
 
 
