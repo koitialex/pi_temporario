@@ -462,27 +462,6 @@ function setupRegisterForm() {
     }
 }
 
-function gerenciarVisibilidadeNavBar() {
-    // Assumindo que os links a serem gerenciados estão dentro de um elemento <nav>
-    // e que o link de login/logout tem uma classe específica para ser ignorado.
-    const navLinks = document.querySelectorAll('nav a:not(.login-link)'); // Ajuste o seletor se necessário
-    const path = window.location.pathname;
-
-    // Páginas onde os links devem estar escondidos
-    const paginasPublicas = ['/', '/login.html', '/register.html', '/index.html']; // Adicione as URLs exatas
-
-    const estaEmPaginaPublica = paginasPublicas.some(p => path.endsWith(p));
-
-    navLinks.forEach(link => {
-        if (estaEmPaginaPublica) {
-            link.style.display = 'none'; // Esconde os links
-        } else {
-            link.style.display = ''; // Mostra os links (restaura o padrão)
-        }
-    });
-}
-
-
 function setupLoginForms() {
     const formLogin = document.getElementById('login-forms-id');
     const btnLogin = document.getElementById('button-reset-login');
@@ -521,7 +500,7 @@ function setupLoginForms() {
                     if (data.sucesso) {
                         alert('Login feito com sucesso!');
                         limparCamposFormulariologin();
-                        window.location.href = '/loginAndRegister/home';
+                        window.location.href = '/home';
                     } else {
                         alert('Erro: ' + data.mensagem);
 
@@ -581,6 +560,7 @@ function setupLoginForms() {
         // console.log('Formulário de login "login-forms-id" não encontrado. Ignorando setup.');
     }
 }
+
 
 function setupRecuperacaoSenhaForm() {
     const formRec = document.getElementById('rec-forms-id');
@@ -707,8 +687,12 @@ function setupNewPasswordForm() {
 // ÚNICO DOMContentLoaded para inicializar tudo
 // ====================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
-    gerenciarVisibilidadeNavBar()
-    setupDependentQuestions()
+    createProductCard();
+    loadFeaturedProducts();
+    setupcarrinho();
+    setupLogoutButton();
+    gerenciarVisibilidadeNavBar();
+    setupDependentQuestions();
     // 1. Setup dos botões de Login/Registro
     setupLoginAndRegisterButtons();
 

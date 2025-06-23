@@ -87,7 +87,7 @@ select {
 .site-header {
     background-color: rgb(88, 88, 88);
     border-bottom: 1px solid var(--border-color);
-    padding: 1rem 0;
+    padding: 2rem 0;
     width: 100%;
     height: 10vh;
     
@@ -174,7 +174,8 @@ select {
 /*outros icones ao lado do pesquisar*/
 .fa-heart,
 .fa-user,
-.fa-shopping-cart{
+.fa-shopping-cart,
+.fa-right-from-bracket{
     color: white;
 }
 

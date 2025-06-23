@@ -1,11 +1,44 @@
+ <link rel="stylesheet" href="/css/home.css">
 <main>
+        <main>
         <section class="hero">
             <div class="container">
                 <h1>Manto de Campeões</h1>
                 <p>Vista-se como um campeão com nossas camisetas esportivas.</p>
-                <a href="produtos.html" class="btn btn-primary">Ver Catálogo</a>
+                <a href="produtos.html" class="btn btn-primary" >Ver Catálogo</a>
             </div>
         </section>
+
+        <section class="featured-products container">
+            <h2>Produtos em Destaque</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper" id="featured-grid">
+                    </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="cart-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Meu Carrinho</h2>
+                <button id="close-modal-btn" class="close-btn">&times;</button>
+            </div>
+            <div id="cart-items-container" class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <div class="subtotal">
+                    <strong>Subtotal:</strong>
+                    <span id="cart-subtotal">R$ 0,00</span>
+                </div>
+                <a href="checkout.html" class="btn btn-primary checkout-btn">Finalizar Compra</a>
+            </div>
+        </div>
+    </div>
  
         <section class="featured-products container">
             <h2>Produtos em Destaque</h2>
@@ -13,4 +46,4 @@
                 </div>
         </section>
     </main>
- 
+<script src="/js/scriptHome.js"></script>

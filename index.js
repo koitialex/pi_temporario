@@ -21,9 +21,10 @@ app.use(express.static('public'))
 app.get('/', function (req, res) {
   res.render('loginAndRegister')
 })
-app.get('/home', function (req, res) {
-  res.render('home')
-})
+
+
+
+
 /*configurando os dados para serem requisitados e enviar para o banco de dados . também leva pro caminho seguinte após coletar estes dados*/
 app.post('/cadastro', function (req, res) {
   const nome = req.body.nome
@@ -67,6 +68,15 @@ app.get('/loginAndRegister/recuperacaoSenha/novaSenha', function (req, res) {
 })
 app.get('/loginAndRegister/home', function (req, res) {
   res.render('home')
+})
+app.get('/home', function (req, res) {
+  res.render('home')
+})
+app.get('/carrinho', function (req, res) {
+  res.render('carrinho')
+})
+app.get('/catalogo', function (req, res) {
+  res.render('catalogo')
 })
 
 

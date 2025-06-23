@@ -1,5 +1,48 @@
+<div class="container-margin">
+    <div class="cart-item">
+   {{#each itens}}
+    <div class="cart-item">
+        <!-- Usa a coluna 'imagem' do banco de dados -->
+        <div class="item-image">
+           <img src="{{this.imagem}}" alt="{{this.nome}}" style="width: 100px; height: 100px; object-fit: cover; border-radius: 8px;">
+        </div>
+        <div class="item-details">
+            <!-- Usa a coluna 'nome' -->
+            <p class="item-name">{{this.nome}}</p>
+            <div class="item-quantity-control">
+                <button class="quantity-button">-</button>
+                <!-- Usa a coluna 'quantidade' -->
+                <span class="quantity-display">{{this.quantidade}}</span>
+                <button class="quantity-button">+</button>
+            </div>
+        </div>
+        <!-- Usa a coluna 'valor' -->
+        <span class="item-price">R$ {{this.valor}}</span>
+        <button class="delete-button">
+            <i class="material-icons">delete_outline</i>
+        </button>
+    </div>
+    {{else}}
+    <!-- Este bloco é exibido automaticamente se a lista 'itens' estiver vazia -->
+    <div class="cart-empty">
+        <h2>Seu carrinho está vazio.</h2>
+        <p>Adicione produtos para vê-los aqui.</p>
+    </div>
+    {{/each}}
+    </div>
 
-<body>
-    <h1>oi</h1>
-</body>
+    <div class="cart-footer-actions">
+        <div class="cart-summary">
+            <div class="summary-row">
+                <span class="summary-label">Subtotal</span>
+                <span class="summary-value">R$ 199,90</span>
+            </div>
+            <p class="delivery-info">Frete calculado no checkout</p>
+        </div>
 
+        <div class="checkout-buttons">
+            <button class="checkout-button">Finalizar Compra</button>
+            <button class="continue-shopping-button">Continuar Comprando</button>
+        </div>
+
+    </div>
