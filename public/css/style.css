@@ -90,20 +90,24 @@ select {
     padding: 1rem 0;
     width: 100%;
     height: 10vh;
+    
 }
 
 .site-header .container {
     margin: 0 auto;
     width: 75%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: center; /* Centraliza horizontalmente */
+    gap: 40px; /* Espaçamento entre logo, navegação e ícones */
+    position: relative;
 }
-
 .logo {
     max-width: 150px;
     display: flex;
     align-items: center;
+    position: absolute;
+    left: 0;
 }
 
 .logo-img {
@@ -116,9 +120,15 @@ select {
     gap: 1.5rem;
 }
 
+.main-nav a {
+    color: white;
+}
+
 .header-actions {
     display: flex;
     gap: 1rem;
+    position: absolute;
+    right: 0;
 }
 
 .header-actions i {
@@ -244,21 +254,37 @@ select {
     padding: 12vh 5vh;
 }
 
+input.erro,
+select.erro {
+  border: 1px solid red !important;
+  background-color: #ffe6e6;
+}
+
+label.erro {
+  color: red !important;
+  font-weight: bold;
+}
+
 /* === FORMULÁRIOS === */
 .input {
     display: flex;
     flex-direction: column;
 }
-
+.select-Escolha, 
 .input input {
     width: 100%;
     height: 4vh;
     margin-bottom: 10px;
     border-radius: 8px;
 }
+.register p{
+    margin: 0.5vh;
+    font-weight: 10;
+    font-size: 1em;
+}
 
-.select-Escolha {
-    width: 100%;
+.login{
+    
 }
 
 .login fieldset,
@@ -290,6 +316,8 @@ select {
     border-bottom: 1px solid white;
 }
 
+
+
 /* === BOTÕES === */
 .button {
     margin-top: 5px;
@@ -311,7 +339,7 @@ select {
 }
 
 .troca button {
-    width: 50%;
+    width: 100%;
 }
 
 .buttons-nav input {
